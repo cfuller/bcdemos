@@ -1,0 +1,93 @@
+@font-face{
+  font-family:bellmedia; src:url(fonts/bellmedia.eot?v=1.5);
+  src:url(fonts/bellmedia.eot?v=1.5#iefix) format("embedded-opentype"),url(fonts/bellmedia.woff?v=1.5) format("woff"),url(fonts/bellmedia.ttf?v=1.5) format("truetype"),url(fonts/bellmedia.svg?v=1.5#bellmedia) format("svg");
+  font-weight:400;
+  font-style:normal
+}
+@font-face{font-family:BellSlim-Regular;src:url(fonts/bell_slim_regular-webfont.eot);src:url(fonts/bell_slim_regular-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_regular-webfont.woff) format("woff"),url(fonts/bell_slim_regular-webfont.ttf) format("truetype"),url(fonts/bell_slim_regular-webfont.svg#bellslimregular) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:BellSlim-Bold;src:url(fonts/bell_slim_bold-webfont.eot);src:url(fonts/bell_slim_bold-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_bold-webfont.woff) format("woff"),url(fonts/bell_slim_bold-webfont.ttf) format("truetype"),url(fonts/bell_slim_bold-webfont.svg#bellslimbold) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:BellSlim-Heavy;src:url(fonts/bell_slim_heavy-webfont.eot);src:url(fonts/bell_slim_heavy-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_heavy-webfont.woff) format("woff"),url(fonts/bell_slim_heavy-webfont.ttf) format("truetype"),url(fonts/bell_slim_heavy-webfont.svg#bellslimheavy) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:BellSlim-Medium;src:url(fonts/bell_slim_medium-webfont.eot);src:url(fonts/bell_slim_medium-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_medium-webfont.woff) format("woff"),url(fonts/bell_slim_medium-webfont.ttf) format("truetype"),url(fonts/bell_slim_medium-webfont.svg#bellslimmedium) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:BellSlim-SemiBold;src:url(fonts/bell_slim_semibold-webfont.eot);src:url(fonts/bell_slim_semibold-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_semibold-webfont.woff) format("woff"),url(fonts/bell_slim_semibold-webfont.ttf) format("truetype"),url(fonts/bell_slim_semibold-webfont.svg#bellslimsemibold) format("svg");font-weight:400;font-style:normal}
+
+.container {
+  max-width: 1000px;
+}
+
+.bg-gray {
+  background-color: #f2f2f3;
+}
+
+nav {
+  font-family: BellSlim-Regular, Arial, sans-serif;
+  background-color: #0066a4;
+  height: 80px;
+}
+
+h1.title {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 3.2em;
+  line-height:1em;
+  font-family: BellSlim-Regular, Arial, sans-serif;;
+  color: #212121;
+}
+
+.logo {
+  max-height: 55px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.logo img {
+  max-height: 55px;
+}
+
+.navbar-header {
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+ul.navbar-right {
+  line-height: 1.6;
+  background-color: #0066a4;
+}
+
+@media (min-width: 700px) {
+  ul.navbar-right {
+    margin-top: 30px;
+  }
+}
+
+.navbar-toggle .icon-bar {
+  color: #fff;
+  background-color: #fff;
+}
+
+.nav>li {
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.nav>li a {
+  display: block;
+  color: #fff;
+}
+
+.nav>li a:hover {
+  color: #0066a4;
+  background-color: white;
+}
+
+.featured-player {
+  text-align: center;
+}
+
+.sub-players {
+  margin-top: 1em;
+}
+
+footer {
+  margin-top: 2em;
+}
