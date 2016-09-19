@@ -24,6 +24,9 @@ function destroyAllPlayers() {
 	for (var p in playerList) {
 		destroyPlayer( p )
 	}
+
+	// Kill the playlist
+	console.log('killing playlist')
 }
 
 function destroyPlayer( vjsId) {
@@ -54,7 +57,13 @@ function loadVideo( vjsId, video) {
 	videojs(vjsId).ready(function() {
     	this.mediainfo = videoObject;
      	this.src(this.mediainfo.sources);
-    });
+   
+		console.log('loading poster')
+	    if (typeof video.images.poster.src != 'undefined')  {
+	    	this.poster(video.images.poster.src)
+	    }
+
+ 	});
 
 	// // Load a VC Video
 	// videojs(vjsId).ready(function() { 
@@ -64,7 +73,6 @@ function loadVideo( vjsId, video) {
     //            player.catalog.load(video);
     //        });
 	// });
-
 }
 
 function createPlayer(vjsId, pid, div, inVideo) {
@@ -116,8 +124,15 @@ function createPlayer(vjsId, pid, div, inVideo) {
 			}
 		}
 
+		// playerHTML += ' autoplay '
+
 		playerHTML += '\" data-player=\"' + config.dataPlayerId + 
-				  '\" data-embed=\"default\" class=\"video-js\" controls  ></video></div></div>';
+				  '\" data-embed=\"default\" class=\"video-js\" controls '
+
+		if (myCfg.autoplay)		  
+			playerHTML += ' autoplay'
+
+		playerHTML += ' ></video></div></div>';
 
 
 		console.log("PlayerInnerHTML: " + playerHTML)
@@ -137,6 +152,9 @@ function createPlayer(vjsId, pid, div, inVideo) {
 
 
 		initPlugins(vjsId, myCfg);
+
+		if (playlistId)
+			initPlaylist( vjsId, { "playOnSelect": true } )
 
 		console.log( "Product is " + product)
 		if ( product == "perform" && video) {
@@ -160,6 +178,15 @@ function initPlugins( vjsId, config ) {
 
 		var plugin = plugins[pluginName]
 
+		console.log('loading: ' + plugin.js)
+		if (plugin.js) {
+			jQuery.getScript(plugin.js)
+			.done(function() {
+				player[pluginName](plugin.options)
+			});
+		}
+
+		console.log('loading: ' + plugin.css)
 		if (plugin.css) {
 			$("<link/>", {
 			   rel: "stylesheet",
@@ -167,14 +194,39 @@ function initPlugins( vjsId, config ) {
 			   href: plugin.css
 			}).appendTo("head");
 		}
-		
+
+		console.log('loading: ' + plugin.js)
 		if (plugin.js) {
 			jQuery.getScript(plugin.js)
 			.done(function() {
-				player[pluginName](plugin.options)
+				//player[pluginName](plugin.options)
 			});
 		}
 	}
+}
+
+function initPlaylist( vjsId, options ) {
+
+	return
+	var css = "//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.css";
+	var js  = "//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.min.js";
+
+	var player  = videojs.getPlayers()[vjsId];
+	console.log("initializing Playlist")
+	
+
+	$("<link/>", {
+	   rel: "stylesheet",
+	   type: "text/css",
+	   href: css
+	}).appendTo("head");
+
+
+	jQuery.getScript(js)
+	.done(function() {
+			player.bcPlaylistUi( options )
+	});
+
 }
 
 

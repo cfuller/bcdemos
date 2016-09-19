@@ -2,41 +2,77 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script src="bootstrap.min.js"></script>
   <script src="demoPlayer.js"></script>
+  
+ 
+
   <script>
+
+  function hideAllDynamic() {
+    $( ".playlist-wrapper" ).hide();
+    $( ".sub-players" ).hide();
+
+  }
 
   function loadPoc1() {
 
       destroyAllPlayers();
-
-      createPlayer( 'p1', 'poc_main', 'main',  null);
-      // createPlayer( 'p2', 'poc_main', 'small1', '4598765909001');
-      // createPlayer( 'p3', 'fuller',   'small2', null);
-      // createPlayer( 'p4', 'fuller',   'small3', null);
+      hideAllDynamic();
+     
+      createPlayer( 'p0', 'ad-playlist', 'main',  null);
+      $( ".playlist-wrapper" ).show();
   }
 
   function loadPoc2() {
 
     destroyAllPlayers();
+    hideAllDynamic();
+   
+    createPlayer( 'p0', 'drm', 'main',   'drm1');
+    createPlayer( 'p1', 'drm', 'small1', 'drm1');
+    createPlayer( 'p2', 'drm', 'small2', 'drm1');
+    createPlayer( 'p3', 'drm', 'small3', 'drm1');
 
-    createPlayer( 'p1', 'poc-drm', 'main', 'clear1');
+     $( ".sub-players" ).show();
   }
 
   function loadPoc3() {
 
     destroyAllPlayers();
-    createPlayer( 'p1', 'poc-drm', 'main', 'albert1');
+    hideAllDynamic();
+
+    createPlayer( 'p0', 'ad', 'main', 'clear1');
+  }
+
+  function loadPoc4() {
+    destroyAllPlayers();
+    hideAllDynamic();
+    createPlayer( 'p0', 'iris', 'main', null);
+  }
+
+  function loadPoc5() {
+    destroyAllPlayers();
+    hideAllDynamic();
+    createPlayer( 'player', 'scrubber', 'main', null);
+  }
+
+
+  function loadHome() {
+    console.log('home')
+
   }
 
   // Load the page configuration file and the startup dynamic pages
   (function() {
-    console.log('getting json')
+    console.log('getting json (If the page stops here, your config file is not valid json)')
     $.getJSON("config.json", function (data ) {
       _cfg = data
       console.log(_cfg)
-      loadPoc1();
+      loadHome()
     }); 
   })();
 
@@ -45,6 +81,8 @@
   <link rel="stylesheet" href="bootstrap.min.css" />
   <link rel="stylesheet" href="bell.css" />
   <link rel="stylesheet" href="http://solutions.brightcove.com/dbornstein/dev/cust/patch/patchExample.css" />
+  <link rel="stylesheet" href="https://rawgit.com/brightcove/videojs-thumbnails/master/videojs.thumbnails.css" />
+
   
 </head>
 <body>
@@ -58,15 +96,16 @@
         <span class="icon-bar"></span>
       </button>
       <a href="/" class="navbar-brand">
-        <img class="logo" src="http://www.bellmedia.ca/wp-content/themes/bellmedia-release-v5.0.0-20160822121226/assets/images/logos/bell_media_en_white.png" alt="Bell_media_en_white">
+        <img class="logo" src="http://www.bellmedia.ca/wp-content/themes/bellmedia-release-v5.0.0-20160822121226/assets/images/logos/bell_media_en_white.png" alt="Bell_media_en_white" onclick="loadHome()">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="nav navbar-nav navbar-right" >
         <li><a href="#"  onclick="loadPoc1()" selected>Playlist Demo</a></li>
         <li><a href="#"  onclick="loadPoc2()">Security Demo</a></li>
-        <li><a href="#"  onclick="loadPoc3()">Albert DRM</a></li>
-        <li><a href="#">xxx</a></li>
+        <li><a href="#"  onclick="loadPoc3()">Manual Switching</a></li>
+        <li><a href="#"  onclick="loadPoc4()">Recommendations</a></li>
+        <li><a href="#"  onclick="loadPoc5()">Thumbnail Scrubber</a></li>
       </ul>
     </div>
   </div>
@@ -91,11 +130,11 @@
       <div class="col-sm-4" id="small2"> </div>
       <div class="col-sm-4" id='small3'> </div>
     </div>
-    playlist
+
     <div class="playlist-wrapper"> <ol class="vjs-playlist"></ol></div></div>
   </div>
 </div>
-<footer class="container">
+<!-- <footer class="container">
   <div class="row">
     <div class="col-sm-4">
       footer column 1
@@ -107,6 +146,6 @@
       footer column 3
     </div>
   </div>
-</footer>
+</footer> -->
 </body>
 </html>
