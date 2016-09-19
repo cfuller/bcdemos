@@ -4,8 +4,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script src="bootstrap.min.js"></script>
+  <script src="demoPlayer.js"></script>
+  <script>
+
+  function loadPoc1() {
+
+      destroyAllPlayers();
+
+      createPlayer( 'p1', 'poc_main', 'main',  null);
+      // createPlayer( 'p2', 'poc_main', 'small1', '4598765909001');
+      // createPlayer( 'p3', 'fuller',   'small2', null);
+      // createPlayer( 'p4', 'fuller',   'small3', null);
+  }
+
+  function loadPoc2() {
+
+    destroyAllPlayers();
+
+    createPlayer( 'p1', 'poc-drm', 'main', 'clear1');
+  }
+
+  function loadPoc3() {
+
+    destroyAllPlayers();
+    createPlayer( 'p1', 'poc-drm', 'main', 'albert1');
+  }
+
+  // Load the page configuration file and the startup dynamic pages
+  (function() {
+    console.log('getting json')
+    $.getJSON("config.json", function (data ) {
+      _cfg = data
+      console.log(_cfg)
+      loadPoc1();
+    }); 
+  })();
+
+  </script>
+
   <link rel="stylesheet" href="bootstrap.min.css" />
   <link rel="stylesheet" href="bell.css" />
+  <link rel="stylesheet" href="http://solutions.brightcove.com/dbornstein/dev/cust/patch/patchExample.css" />
+  
 </head>
 <body>
 <nav class="navbar navbar-static-top">
@@ -22,12 +62,11 @@
       </a>
     </div>
     <div class="collapse navbar-collapse" id="nav1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">link 1</a></li>
-        <li><a href="#">link 2</a></li>
-        <li><a href="#">link 3</a></li>
-        <li><a href="#">link 4</a></li>
-        <li><a href="#">link 5</a></li>
+      <ul class="nav navbar-nav navbar-right" >
+        <li><a href="#"  onclick="loadPoc1()" selected>Playlist Demo</a></li>
+        <li><a href="#"  onclick="loadPoc2()">Security Demo</a></li>
+        <li><a href="#"  onclick="loadPoc3()">Albert DRM</a></li>
+        <li><a href="#">xxx</a></li>
       </ul>
     </div>
   </div>
@@ -42,69 +81,18 @@
 <div class="bg-gray">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 featured-player">
-        <div style="display: block; position: relative; max-width: 100%;">
-          <div style="padding-top: 56.25%;">
-            <video data-video-id="4527128898001"
-                   data-account="4365621380001"
-                   data-player="59579bce-1612-4607-8e8d-adc5db73766d"
-                   data-embed="default"
-                   data-application-id
-                   class="video-js"
-                   controls
-                   style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
-            <script src="//players.brightcove.net/4365621380001/59579bce-1612-4607-8e8d-adc5db73766d_default/index.min.js"></script>
-          </div>
-        </div>
-      </div>
+      <!-- <div class="outer"> <div class="myplayer"> -->
+      <div class="col-sm-12 featured-player" id="main">
+        <!-- <div style="display: block; position: relative; max-width: 100%;"> --> 
+      </div> 
     </div>
     <div class="row sub-players">
-      <div class="col-sm-4">
-        <div style="display: block; position: relative; max-width: 100%;">
-          <div style="padding-top: 56.25%;">
-            <video data-video-id="4527128898001"
-                   data-account="4365621380001"
-                   data-player="59579bce-1612-4607-8e8d-adc5db73766d"
-                   data-embed="default"
-                   data-application-id
-                   class="video-js"
-                   controls
-                   style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
-            <script src="//players.brightcove.net/4365621380001/59579bce-1612-4607-8e8d-adc5db73766d_default/index.min.js"></script>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div style="display: block; position: relative; max-width: 100%;">
-          <div style="padding-top: 56.25%;">
-            <video data-video-id="4527128898001"
-                   data-account="4365621380001"
-                   data-player="59579bce-1612-4607-8e8d-adc5db73766d"
-                   data-embed="default"
-                   data-application-id
-                   class="video-js"
-                   controls
-                   style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
-            <script src="//players.brightcove.net/4365621380001/59579bce-1612-4607-8e8d-adc5db73766d_default/index.min.js"></script>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div style="display: block; position: relative; max-width: 100%;">
-          <div style="padding-top: 56.25%;">
-            <video data-video-id="4527128898001"
-                   data-account="4365621380001"
-                   data-player="59579bce-1612-4607-8e8d-adc5db73766d"
-                   data-embed="default"
-                   data-application-id
-                   class="video-js"
-                   controls
-                   style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
-            <script src="//players.brightcove.net/4365621380001/59579bce-1612-4607-8e8d-adc5db73766d_default/index.min.js"></script>
-          </div>
-        </div>
-      </div>
+      <div class="col-sm-4" id="small1"> </div>
+      <div class="col-sm-4" id="small2"> </div>
+      <div class="col-sm-4" id='small3'> </div>
     </div>
+    playlist
+    <div class="playlist-wrapper"> <ol class="vjs-playlist"></ol></div></div>
   </div>
 </div>
 <footer class="container">
