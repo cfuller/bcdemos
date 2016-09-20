@@ -31,9 +31,9 @@
     hideAllDynamic();
    
     createPlayer( 'p0', 'drm', 'main',   'drm1');
-    createPlayer( 'p1', 'drm', 'small1', 'drm1');
-    createPlayer( 'p2', 'drm', 'small2', 'drm1');
-    createPlayer( 'p3', 'drm', 'small3', 'drm1');
+    // createPlayer( 'p1', 'drm', 'small1', 'drm1');
+    // createPlayer( 'p2', 'drm', 'small2', 'drm1');
+    // createPlayer( 'p3', 'drm', 'small3', 'drm1');
 
      $( ".sub-players" ).show();
   }
@@ -43,7 +43,7 @@
     destroyAllPlayers();
     hideAllDynamic();
 
-    createPlayer( 'p0', 'bitrate-selector', 'main', '4598862275001');
+    createPlayer( 'p0', 'bitrate-selector', 'main', null);
   }
 
   function loadPoc4() {
@@ -60,7 +60,8 @@
 
 
   function loadHome() {
-    createPlayer('fs', 'fullscreen', 'main', 'drm1')
+    loadPoc1()
+    //createPlayer('fs', 'fullscreen', 'main', 'drm1')
 
   }
 

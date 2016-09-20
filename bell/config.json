@@ -35,21 +35,55 @@
 			"plugins": {
 				"ima3": {
 					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
-					
+					"css": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css",
 					"options": {
 						"debug": true,
 						"requestMode": "onload",
 				        "hardTimeouts": true,
 	    				"serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]"
 					}
-				}
+				},
+				"related": {
+					"js": "//solutions.brightcove.com/bclifford/demo/player/js/videojs-related.min.js",
+					"css": "//solutions.brightcove.com/bclifford/demo/player/css/videojs-related.css",
+					"options": {
+      					"source": "related",
+      					"token": "PvXQ5LwozBUo6w4_a_A2JGWS42E0JggkcgYvpXSolYFQd_rQBfOXzg..",
+      					"link": {
+				        	"field": "link.url"
+     					}
+					}
+				},
+				"manualRenditionSelection": {
+					"js": "./manualRenditionSelection.js",
+					"css": "./manualRenditionSelection.css",
+					"options": {}
+				}	
 			}
 		},
 		"drm": {
 			"product": "perform",
 			"accountId": "4165107200001",
 			"bcPlayerId": "ryavj53h",
-			"defaultVideo": "4598862275001"
+			"defaultVideo": "4598862275001",
+			"plugins": {
+				"manualRenditionSelection": {
+					"js": "./manualRenditionSelection.js",
+					"css": "./manualRenditionSelection.css",
+					"options": {}
+				},
+				"related": {
+					"js": "//solutions.brightcove.com/bclifford/demo/player/js/videojs-related.min.js",
+					"css": "//solutions.brightcove.com/bclifford/demo/player/css/videojs-related.css",
+					"options": {
+      					"source": "related",
+      					"token": "PvXQ5LwozBUo6w4_a_A2JGWS42E0JggkcgYvpXSolYFQd_rQBfOXzg..",
+      					"link": {
+				        	"field": "link.url"
+     					}
+					}
+				}
+			}
 		},
 		"iris": {
 			"comment": "IRIS Player from NAB Demo site",
@@ -75,7 +109,7 @@
 			"comment": "Std Player with Bitrate Selector",
 			"accountId": "4165107200001",
 			"bcPlayerId": "SJ8voc23",
-			"defaultVideo": "4598862275001",
+			"defaultVideo": "4598812576001",
 			"autoplay": true,
 			"muted": true,
 			"plugins": {
@@ -83,6 +117,14 @@
 					"js": "./manualRenditionSelection.js",
 					"css": "./manualRenditionSelection.css",
 					"options": {}
+				},
+				"skipButton": {
+					"js": "./skipButton.js",
+					"css": "./skipButton.css]",
+					"options": {
+ 						"forwards": 30,
+  						"back": 30
+  					}
 				}
 			}
 		}

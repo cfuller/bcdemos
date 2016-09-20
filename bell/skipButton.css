@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+.vjs-skip {
+  font-family: 'Material Icons';
+}
+.video-js .vjs-skip.skip-back::before {
+  content: '\e042';
+}
+.video-js .vjs-skip.skip-back.skip-10::before {
+  content: '\e059';
+}
+.video-js .vjs-skip.skip-back.skip-5::before {
+  content: '\e05b';
+}
+.video-js .vjs-skip.skip-back.skip-30::before {
+  content: '\e05a';
+}
+.video-js .vjs-skip.skip-forward::before {
+  content: '\e5d5';
+}
+.video-js .vjs-skip.skip-forward.skip-10::before {
+  content: '\e056';
+}
+.video-js .vjs-skip.skip-forward.skip-5::before {
+  content: '\e058';
+}
+.video-js .vjs-skip.skip-forward.skip-30::before {
+  content: '\e057';
+}
