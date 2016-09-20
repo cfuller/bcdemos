@@ -109,6 +109,7 @@ function createPlayer(vjsId, pid, div, inVideo) {
 	var playerScript = "http://players.brightcove.net/" + config.accountId + "/" + config.dataPlayerId + "_default/index.min.js";
 	
 	console.log('loading player: ' + playerScript)
+
 	jQuery.getScript(playerScript, function(data, status, jqxhr) {
 
 		//player script is loaded, now make the player object and load it.
@@ -132,6 +133,9 @@ function createPlayer(vjsId, pid, div, inVideo) {
 		if (myCfg.autoplay)		  
 			playerHTML += ' autoplay'
 
+		if (myCfg.muted)		  
+			playerHTML += ' muted'
+
 		playerHTML += ' ></video></div></div>';
 
 
@@ -150,13 +154,13 @@ function createPlayer(vjsId, pid, div, inVideo) {
 
 		bc(document.getElementById(config.playerId));
 
-
-		initPlugins(vjsId, myCfg);
+		loadPlugins(vjsId, pid, myCfg);
 
 		if (playlistId)
 			initPlaylist( vjsId, { "playOnSelect": true } )
 
 		console.log( "Product is " + product)
+
 		if ( product == "perform" && video) {
 			console.log('Using Perform, Loading Video')
 			vid = _cfg.videos[video] || {}
@@ -166,10 +170,23 @@ function createPlayer(vjsId, pid, div, inVideo) {
 				loadVideo(vjsId, vid);
 			}	
 		}
+		console.log('Done loading player')
 	});
 }
 
-function initPlugins( vjsId, config ) {
+function getScripts(scripts, callback) {
+    var progress = 0;
+    scripts.forEach(function(script) { 
+    	console.log('loading ' + script)
+        $.getScript(script, function () {
+            if (++progress == scripts.length) callback();
+        }); 
+    });
+}
+
+function loadPlugins( vjsId, pid, config ) {
+
+	console.log('**** initializing Plugins')
 
 	var player  = videojs.getPlayers()[vjsId]; 
 	var plugins = config.plugins || {};
@@ -177,16 +194,6 @@ function initPlugins( vjsId, config ) {
 	for (var pluginName in plugins) {
 
 		var plugin = plugins[pluginName]
-
-		console.log('loading: ' + plugin.js)
-		if (plugin.js) {
-			jQuery.getScript(plugin.js)
-			.done(function() {
-				player[pluginName](plugin.options)
-			});
-		}
-
-		console.log('loading: ' + plugin.css)
 		if (plugin.css) {
 			$("<link/>", {
 			   rel: "stylesheet",
@@ -194,40 +201,73 @@ function initPlugins( vjsId, config ) {
 			   href: plugin.css
 			}).appendTo("head");
 		}
+	}
 
-		console.log('loading: ' + plugin.js)
-		if (plugin.js) {
-			jQuery.getScript(plugin.js)
-			.done(function() {
-				//player[pluginName](plugin.options)
-			});
-		}
+	pluginList = []
+	for (var pluginName in plugins) {
+	
+		var plugin = plugins[pluginName]
+		if (plugin.js)
+			pluginList.push(plugin.js)
+
+		getScripts(pluginList, function () {
+			for (var pluginName in plugins) {
+
+				var plugin = plugins[pluginName]
+				console.log("Processing init for " + pluginName)
+				player[pluginName](plugin.options)
+			}
+		});
 	}
 }
+  
 
-function initPlaylist( vjsId, options ) {
+function testme(vjsId, pid, pluginName) {
 
+	var options = _cfg.players[pid].plugins[pluginName].options
+	var player  = videojs.getPlayers()[vjsId]; 
+	player[pluginName](options)
+}
+
+function initPlugin( vjsId, pid, pluginName) {
+
+	player[pluginName](options)
 	return
-	var css = "//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.css";
-	var js  = "//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.min.js";
 
-	var player  = videojs.getPlayers()[vjsId];
-	console.log("initializing Playlist")
+
+	var options = _cfg.players[pid].plugins[pluginName].options
+	var player  = videojs.getPlayers()[vjsId]; 
+
+	videojs.getPlayers()[vjsId].ready( function() {
+		console.log('initializing plugin')
+		player[pluginName](options)
+	});
+}
+
+
+// function initPlaylist( vjsId, options ) {
+
+// 	return
+// 	var css = "//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.css";
+// 	var js  = "//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.min.js";
+
+// 	var player  = videojs.getPlayers()[vjsId];
+// 	console.log("initializing Playlist")
 	
 
-	$("<link/>", {
-	   rel: "stylesheet",
-	   type: "text/css",
-	   href: css
-	}).appendTo("head");
+// 	$("<link/>", {
+// 	   rel: "stylesheet",
+// 	   type: "text/css",
+// 	   href: css
+// 	}).appendTo("head");
 
 
-	jQuery.getScript(js)
-	.done(function() {
-			player.bcPlaylistUi( options )
-	});
+// 	jQuery.getScript(js)
+// 	.done(function() {
+// 			player.bcPlaylistUi( options )
+// 	});
 
-}
+// }
 
 
 

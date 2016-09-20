@@ -5,12 +5,14 @@
 			"bcPlayerId": "59579bce-1612-4607-8e8d-adc5db73766d",
 			"defaultVideo": "4527128898001"
 		},
-		"ad": {
-			"comment": "Non-Playlist Player",
+		
+		"ad-std": {
+			"comment": "Std Player with IMA",
 			"accountId": "4165107200001",
 			"bcPlayerId": "SJ8voc23",
 			"defaultVideo": "4598862275001",
-			"playlistId": "4598147255001",
+			"autoplay": true,
+			"muted": true,
 			"plugins": {
 				"ima3": {
 					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
@@ -21,15 +23,11 @@
 				        "hardTimeouts": true,
 	    				"serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]"
 					}
-				},
-				"manualRenditionSelection": {
-					"js": "./manualRenditionSelection.js",
-					"css": "./manualRenditionSelection.css"
 				}
 			}
 		},
 		"ad-playlist": {
-			"comment": "Playlist Player",
+			"comment": "Playlist Player with IMA",
 			"accountId": "4165107200001",
 			"bcPlayerId": "ryXDWbTh",
 			"defaultVideo": "4598862275001",
@@ -61,15 +59,30 @@
 			"autoplay": true
 		},
 		"scrubber": {
-			"comment": "Scrubber Player from NAB Demo site",
+			"comment": "Scrubber Player from NAB Demo site. Needed since this uses Bolt.",
 			"accountId": "906043040001",
 			"bcPlayerId": "HyzKOdrN",
 			"defaultVideo": "5017521365001",
 			"autoplay": true,
 			"plugins": {
-				"thumbnails": {
+				"none": {
 					"js": "http://solutions.brightcove.com/dbornstein/dev/bcdemos/bell/boltThumbs.js",
 					"css": "https://rawgit.com/brightcove/videojs-thumbnails/master/videojs.thumbnails.css"
+				}
+			}
+		},
+		"bitrate-selector": {
+			"comment": "Std Player with Bitrate Selector",
+			"accountId": "4165107200001",
+			"bcPlayerId": "SJ8voc23",
+			"defaultVideo": "4598862275001",
+			"autoplay": true,
+			"muted": true,
+			"plugins": {
+				"manualRenditionSelection": {
+					"js": "./manualRenditionSelection.js",
+					"css": "./manualRenditionSelection.css",
+					"options": {}
 				}
 			}
 		}

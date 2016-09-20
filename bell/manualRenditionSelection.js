@@ -1,13 +1,17 @@
 // JavaScript Plugin code
+
 videojs.plugin('manualRenditionSelection', function() {
   var player = this,
     changeQuality,
     createSelectInControlbar;
 
+    console.log("Loading manualRenditionSelection")
+
     player.on('loadedmetadata', function () {
       var selectControl;
 
       // display quality select element in controlbar
+      
       createSelectInControlbar();
 
       // get select element and add change event listener
@@ -17,6 +21,7 @@ videojs.plugin('manualRenditionSelection', function() {
 
   // function that adds the HTML select element to the controlbar
   function createSelectInControlbar() {
+
     var newElement = document.createElement('div'),
       // dynamically build the select element
       selectControl = document.createElement('select'),
@@ -47,9 +52,9 @@ videojs.plugin('manualRenditionSelection', function() {
   function changeQuality(evt) {
     var selectedQuality,
       setToTrueSet,
-      lengthOfReps = player.hls.representations().length,
+      lengthOfReps = player.tech.hls.representations().length,
       theSelect = evt.target,
-      sortedArray = player.hls.representations(),
+      sortedArray = player.tech.hls.representations(),
       highBandwidths,
       lowBandwidths,
       enableBandwidths;
@@ -80,7 +85,7 @@ videojs.plugin('manualRenditionSelection', function() {
       // loop over each rep and check if it should be enabled
       // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
       // set enabled to true, otherwise set enabled to false
-      player.hls.representations().forEach(function (rep) {
+      player.tech.hls.representations().forEach(function (rep) {
         if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
           rep.enabled(true);
         } else {
