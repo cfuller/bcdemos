@@ -5,6 +5,16 @@
 			"bcPlayerId": "59579bce-1612-4607-8e8d-adc5db73766d",
 			"defaultVideo": "4527128898001"
 		},
+
+    "big-bg": {
+      "comment": "Background player for home page",
+      "accountId": "4165107200001",
+      "bcPlayerId": "SJ8voc23",
+      "defaultVideo": "4598862275001",
+      "autoplay": true,
+      "muted": true,
+      "controls": false
+    },
 		
 		"ad-std": {
 			"comment": "Std Player with IMA",
@@ -18,7 +28,7 @@
 					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
 					"css": "http://players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css",
 					"options": {
-						"debug": true,
+            "debug": true,
 						"requestMode": "onload",
 				        "hardTimeouts": true,
 	    				"serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]"
@@ -58,7 +68,7 @@
 					"js": "./manualRenditionSelection.js",
 					"css": "./manualRenditionSelection.css",
 					"options": {}
-				}	
+				}
 			}
 		},
 		"drm": {

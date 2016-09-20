@@ -60,7 +60,7 @@
 
 
   function loadHome() {
-    //createPlayer('fs', 'ad', 'bg-video', 'drm1')
+    //createPlayer('fs', 'big-bg', 'bg-video', 'bigbg');
     loadPoc1()
   }
 
@@ -69,7 +69,7 @@
     console.log('getting json')
     $.getJSON("config.json", function (data, status, jqxhr) {
       _cfg = data
-      console.log(_cfg)
+      //console.log(_cfg)
       loadHome()
     }) 
      .fail(function() {
@@ -111,30 +111,29 @@
     </div>
   </div>
 </nav>
-<div id="bg-video">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="title">Videos</h1>
-      </div>
+<div id="bg-video"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">Videos</h1>
     </div>
   </div>
-  <div class="bg-gray">
-    <div class="container">
-      <div class="row">
-        <!-- <div class="outer"> <div class="myplayer"> -->
-        <div class="col-sm-12 featured-player" id="main">
-          <!-- <div style="display: block; position: relative; max-width: 100%;"> -->
-        </div>
+</div>
+<div class="bg-gray">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="outer"> <div class="myplayer"> -->
+      <div class="col-sm-12 featured-player" id="main">
+        <!-- <div style="display: block; position: relative; max-width: 100%;"> -->
       </div>
-      <div class="row sub-players">
-        <div class="col-sm-4" id="small1"> </div>
-        <div class="col-sm-4" id="small2"> </div>
-        <div class="col-sm-4" id='small3'> </div>
-      </div>
-
-      <div class="playlist-wrapper"> <ol class="vjs-playlist"></ol></div>
     </div>
+    <div class="row sub-players">
+      <div class="col-sm-4" id="small1"> </div>
+      <div class="col-sm-4" id="small2"> </div>
+      <div class="col-sm-4" id='small3'> </div>
+    </div>
+
+    <div class="playlist-wrapper"> <ol class="vjs-playlist"></ol></div>
   </div>
 </div>
 <!-- <footer class="container">
