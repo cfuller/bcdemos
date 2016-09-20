@@ -82,7 +82,12 @@
 				        	"field": "link.url"
      					}
 					}
-				}
+				},
+        "loginForm": {
+          "js": "./loginForm.js",
+          "css": "./loginForm.css",
+          "options": {}
+        }
 			}
 		},
 		"iris": {

@@ -298,4 +298,3 @@ function initPlugin( vjsId, pid, pluginName) {
 // }
 
  //Populate video object (normally from database or CMS)
-
