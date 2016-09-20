@@ -9,13 +9,11 @@
   <script src="demoPlayer.js"></script>
   
  
-
   <script>
 
   function hideAllDynamic() {
     $( ".playlist-wrapper" ).hide();
     $( ".sub-players" ).hide();
-
   }
 
   function loadPoc1() {
@@ -45,7 +43,7 @@
     destroyAllPlayers();
     hideAllDynamic();
 
-    createPlayer( 'p0', 'ad', 'main', 'clear1');
+    createPlayer( 'p0', 'bitrate-selector', 'main', '4598862275001');
   }
 
   function loadPoc4() {
@@ -63,17 +61,20 @@
 
   function loadHome() {
     console.log('home')
-
+    loadPoc3()
   }
 
   // Load the page configuration file and the startup dynamic pages
   (function() {
-    console.log('getting json (If the page stops here, your config file is not valid json)')
-    $.getJSON("config.json", function (data ) {
+    console.log('getting json')
+    $.getJSON("config.json", function (data, status, jqxhr) {
       _cfg = data
       console.log(_cfg)
       loadHome()
-    }); 
+    }) 
+     .fail(function() {
+         console.log( "error loading JSON configuration File." );
+     })
   })();
 
   </script>
@@ -101,8 +102,8 @@
     </div>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="nav navbar-nav navbar-right" >
-        <li><a href="#"  onclick="loadPoc1()" selected>Playlist Demo</a></li>
-        <li><a href="#"  onclick="loadPoc2()">Security Demo</a></li>
+        <li><a href="#"  onclick="loadPoc1()" selected>Playlist</a></li>
+        <li><a href="#"  onclick="loadPoc2()">Security</a></li>
         <li><a href="#"  onclick="loadPoc3()">Manual Switching</a></li>
         <li><a href="#"  onclick="loadPoc4()">Recommendations</a></li>
         <li><a href="#"  onclick="loadPoc5()">Thumbnail Scrubber</a></li>
