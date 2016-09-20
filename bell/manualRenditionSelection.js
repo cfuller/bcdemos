@@ -1,97 +1,102 @@
-// JavaScript Plugin code
+
+/**
+ * manualRenditionSelection.js plugin
+ * 
+ * 
+ * Dave Bornstein
+ */
 
 videojs.plugin('manualRenditionSelection', function() {
-  var player = this,
-    changeQuality,
-    createSelectInControlbar;
 
-    console.log("Loading manualRenditionSelection")
+    var player = this;
+    var representations, repCount;
 
-    player.on('loadedmetadata', function () {
-      var selectControl;
+    var hlsStr = 'application/vnd.apple.mpegurl'
+    var dashStr = 'application/dash+xml'
 
-      // display quality select element in controlbar
-      
-      createSelectInControlbar();
+    console.log("manualRenditionSelection")
 
-      // get select element and add change event listener
-      selectControl = document.getElementById('selectID');
-      selectControl.addEventListener('change',changeQuality);
+    player.on('loadedmetadata', function() {
+        var player = this
+        var selectControl;
+        var currentType = player.currentType_
+
+        if (currentType === hlsStr)
+            representations = player.hls.representations();
+        else if (currentType === dashStr)
+            representations = player.dash.representations();
+        else {
+            console.log('Delivery Format (player.currentType_) is ' + currentType + ". Enabling [auto] only");
+            representations = []
+        }
+
+        repCount = representations.length;
+
+        var selectControl;
+        createUISelector( selectControl )
+        selectControl = document.getElementById('selectID');
+        selectControl.addEventListener('change', changeQuality);
     });
 
-  // function that adds the HTML select element to the controlbar
-  function createSelectInControlbar() {
+    function createUISelector(selectControl) {
 
-    var newElement = document.createElement('div'),
-      // dynamically build the select element
-      selectControl = document.createElement('select'),
-      option;
-    // dynamically configure the select element and add options
-    newElement.id = 'selectID';
-    newElement.name = 'quality';
-    newElement.className = 'selectStyle vjs-control';
-    option = document.createElement('option');
-    option.text = 'Quality';
-    selectControl.appendChild(option);
-    option = document.createElement('option');
-    option.value = 'low';
-    option.text = 'Low';
-    selectControl.appendChild(option);
-    option = document.createElement('option');
-    option.value = 'high';
-    option.text = 'High';
-    selectControl.appendChild(option);
-    newElement.appendChild(selectControl);
-    // get spacer in controlbar and append select element
-    spacer = document.getElementsByClassName('vjs-spacer')[0];
-    spacer.setAttribute("style", "justify-content: flex-end;");
-    spacer.appendChild(newElement);
-  };
+        selectControl = document.createElement('select');
+        var newElement = document.createElement('div');
+        var option;
 
-  // function that changes rendition quality
-  function changeQuality(evt) {
-    var selectedQuality,
-      setToTrueSet,
-      lengthOfReps = player.tech.hls.representations().length,
-      theSelect = evt.target,
-      sortedArray = player.tech.hls.representations(),
-      highBandwidths,
-      lowBandwidths,
-      enableBandwidths;
-    // sort copy of reps array
-    sortedArray.sort(function(a,b){
-      if (a.bandwidth > b.bandwidth) {
-          return 1;
+        // dynamically configure the select element and add options
+        newElement.id = 'selectID';
+        newElement.name = 'quality';
+        newElement.className = 'selectStyle vjs-control';
+
+        option = document.createElement('option');
+        option.text = 'auto';
+        option.value = '-1';
+        selectControl.appendChild(option);
+
+        if (representations.length > 0) {
+
+            for (i = 0; i < repCount; i++) {
+                var rep = representations[i]
+
+                option = document.createElement('option');
+                option.text = rep.bandwidth / 1000 + "k (" + rep.width +
+                    "/" + rep.height + ")";
+                option.value = i
+                selectControl.appendChild(option);
+            }
+
+            option = document.createElement('option');
+            option.value = '0';
+            option.text = 'Low';
+            selectControl.appendChild(option);
+
+            option = document.createElement('option');
+            option.value = repCount - 1;
+            option.text = 'High';
+            selectControl.appendChild(option);
         }
-        if (a.bandwidth < b.bandwidth) {
-          return -1;
+
+        newElement.appendChild(selectControl);
+        spacer = document.getElementsByClassName('vjs-spacer')[0];
+        spacer.setAttribute("style", "justify-content: flex-end;");
+        spacer.appendChild(newElement);
+
+    }
+
+
+    // function that changes rendition quality
+    function changeQuality(evt) {
+
+        theSelect = evt.target;
+        selectedQuality = theSelect.options[theSelect.selectedIndex].value;
+
+        for (var rep in representations) {
+            if (selectedQuality == rep || selectedQuality == -1)
+                representations[rep].enabled(true)
+            else
+                representations[rep].enabled(false)
         }
-        // a must be equal to b
-        return 0;
-    });
-    // for high and low quality getting the top 2 and bottom 2 renditions by bandwidth
-    // put both the bottom 2 and top 2 bandwidths in separate arrays
-    if (lengthOfReps > 2){
-      lowBandwidths = [sortedArray[0].bandwidth, sortedArray[1].bandwidth];
-      highBandwidths = [sortedArray[lengthOfReps - 2].bandwidth, sortedArray[lengthOfReps - 1].bandwidth];
-      // get selected quality from HTML select element
-      selectedQuality = theSelect.options[theSelect.selectedIndex].value;
-      // set either the bottom or top bandwidth array to the desired quality
-      if (selectedQuality === 'low') {
-        enabledBandwidths = lowBandwidths;
-      } else {
-        enabledBandwidths = highBandwidths;
-      }
-      // loop over each rep and check if it should be enabled
-      // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
-      // set enabled to true, otherwise set enabled to false
-      player.tech.hls.representations().forEach(function (rep) {
-        if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
-          rep.enabled(true);
-        } else {
-          rep.enabled(false);
-        }
-      });
     };
- };
+
 });

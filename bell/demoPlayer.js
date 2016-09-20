@@ -13,7 +13,6 @@
 3. Remember players when we create them so we can destroy all that we created
 */
 
-
 function destroyAllPlayers() {
 	try{ videojs; }
 	catch(e) {
@@ -82,6 +81,7 @@ function createPlayer(vjsId, pid, div, inVideo) {
 	// console.log("div: " + div)
 	// console.log("inVideo: " + inVideo)
 
+	console.log("Looking for player config(pid):" + pid)
 	var myCfg = _cfg.players[pid];
 	myCfg['pid'] = pid
 	var product = myCfg['product'] || 'vc'
@@ -156,9 +156,6 @@ function createPlayer(vjsId, pid, div, inVideo) {
 
 		loadPlugins(vjsId, pid, myCfg);
 
-		if (playlistId)
-			initPlaylist( vjsId, { "playOnSelect": true } )
-
 		console.log( "Product is " + product)
 
 		if ( product == "perform" && video) {
@@ -192,8 +189,8 @@ function loadPlugins( vjsId, pid, config ) {
 	var plugins = config.plugins || {};
 
 	for (var pluginName in plugins) {
-
 		var plugin = plugins[pluginName]
+
 		if (plugin.css) {
 			$("<link/>", {
 			   rel: "stylesheet",
