@@ -62,7 +62,7 @@
 
 
   function loadHome() {
-    createPlayer('fs', 'fullscreen', 'main', 'drm1')
+    createPlayer('fs', 'ad', 'bg-video', 'drm1')
 
   }
 
@@ -110,28 +110,30 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="title">Videos</h1>
-    </div>
-  </div>
-</div>
-<div class="bg-gray">
+<div id="bg-video">
   <div class="container">
     <div class="row">
-      <!-- <div class="outer"> <div class="myplayer"> -->
-      <div class="col-sm-12 featured-player" id="main">
-        <!-- <div style="display: block; position: relative; max-width: 100%;"> --> 
-      </div> 
+      <div class="col-md-12">
+        <h1 class="title">Videos</h1>
+      </div>
     </div>
-    <div class="row sub-players">
-      <div class="col-sm-4" id="small1"> </div>
-      <div class="col-sm-4" id="small2"> </div>
-      <div class="col-sm-4" id='small3'> </div>
-    </div>
+  </div>
+  <div class="bg-gray">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="outer"> <div class="myplayer"> -->
+        <div class="col-sm-12 featured-player" id="main">
+          <!-- <div style="display: block; position: relative; max-width: 100%;"> -->
+        </div>
+      </div>
+      <div class="row sub-players">
+        <div class="col-sm-4" id="small1"> </div>
+        <div class="col-sm-4" id="small2"> </div>
+        <div class="col-sm-4" id='small3'> </div>
+      </div>
 
-    <div class="playlist-wrapper"> <ol class="vjs-playlist"></ol></div>
+      <div class="playlist-wrapper"> <ol class="vjs-playlist"></ol></div>
+    </div>
   </div>
 </div>
 <!-- <footer class="container">
