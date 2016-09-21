@@ -32,6 +32,16 @@
   background-color: #f2f2f3;
 }
 
+.bg-gray.home {
+  background-color: #fff;
+}
+
+.home #main {
+  padding: 20px;
+  background: #fff;
+  margin-top: 10em;
+}
+
 nav {
   font-family: BellSlim-Regular, Arial, sans-serif;
   background-color: #0066a4;

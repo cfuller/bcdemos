@@ -60,8 +60,11 @@
 
 
   function loadHome() {
-    //createPlayer('fs', 'big-bg', 'bg-video', 'bigbg');
-    loadPoc1()
+    createPlayer('fs', 'big-bg', 'bg-video', null);
+    $('.title').remove();
+    $('.bg-gray').addClass('home');
+    var html = '<div class="home-page-content">Put some cool stuff here</div>';
+    $('#main').append(html);
   }
 
   // Load the page configuration file and the startup dynamic pages

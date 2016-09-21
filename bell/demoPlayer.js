@@ -128,20 +128,23 @@ function createPlayer(vjsId, pid, div, inVideo) {
 		// playerHTML += ' autoplay '
 
 		playerHTML += '\" data-player=\"' + config.dataPlayerId + 
-				  '\" data-embed=\"default\" class=\"video-js\" controls '
+				  '\" data-embed=\"default\" class=\"video-js\"';
+
+		if (myCfg.controls)
+      playerHTML += ' controls';
 
 		if (myCfg.autoplay)		  
-			playerHTML += ' autoplay'
+			playerHTML += ' autoplay';
 
 		if (myCfg.muted)		  
-			playerHTML += ' muted playsinline '
+			playerHTML += ' muted playsinline ';
 
 		playerHTML += ' ></video></div></div>';
 
 
-		console.log("PlayerInnerHTML: " + playerHTML)
+		console.log("PlayerInnerHTML: " + playerHTML);
 		document.getElementById(config.targetDiv).innerHTML = playerHTML;
-		var newDiv = document.getElementById(config.playerId)
+		var newDiv = document.getElementById(config.playerId);
 
 		// XXX Do we need to put these in the config file?
 		newDiv.style.position = "absolute";
