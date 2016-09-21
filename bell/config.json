@@ -37,10 +37,20 @@
 					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
 					"css": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css",
 					"options": {
-						"debug": true,
-						"requestMode": "onload",
-				        "hardTimeouts": true,
-	    				"serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]"
+					  "timeout": 4000,
+					  "hardTimeouts": true,
+					  "prerollTimeout": 4000,
+					  "postrollTimeout": 4000,
+					  "requestMode": "onload",
+					  "debug": true,
+					  "adTechOrder": [
+					    "html5",
+					    "flash"
+					  ],
+					  "vpaidMode": "ENABLED",
+					  "serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpost&cmsid=496&vid=short_onecue&correlator=",
+					  "serverUrl2": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]",
+					  "serverUrl2": "http://pubads.g.doubleclick.net/gampad/ads?sz=1000x1&iu=/8484/si/video_bc&impl=s&gdfp_req=1&env=vp&output=vast&vid={mediainfo.id}&cust_params=ttid%3D{mediainfo.id}%26ad_keys%3D{mediainfo.ad_keys}%26plid%3D{player.id}%26frnch%3D{franchise}%26ad_tag%3D{adtag}%26category%3D{category}%26section%3D{section}&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&p1={p1}&p2={p2}&q1={q1}&q2={q2}"
 					}
 				},
 				"related": {

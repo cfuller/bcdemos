@@ -134,7 +134,7 @@ function createPlayer(vjsId, pid, div, inVideo) {
 			playerHTML += ' autoplay'
 
 		if (myCfg.muted)		  
-			playerHTML += ' muted'
+			playerHTML += ' muted playsinline '
 
 		playerHTML += ' ></video></div></div>';
 
