@@ -13,7 +13,8 @@
       "defaultVideo": "4527128898001",
       "autoplay": true,
       "muted": true,
-      "controls": false
+      "controls": false,
+      "loop": true
     },
 		
 		"ad-std": {
