@@ -42,6 +42,7 @@
 			"bcPlayerId": "ryXDWbTh",
 			"defaultVideo": "4598862275001",
 			"playlistId": "4598147255001",
+			"controls": true,
 			"plugins": {
 				"ima3": {
 					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
@@ -86,6 +87,7 @@
 			"accountId": "4165107200001",
 			"bcPlayerId": "ryavj53h",
 			"defaultVideo": "4598862275001",
+			"controls": true,
 			"plugins": {
 				"manualRenditionSelection": {
 					"js": "./manualRenditionSelection.js",
@@ -123,6 +125,7 @@
 			"bcPlayerId": "HyzKOdrN",
 			"defaultVideo": "5017521365001",
 			"autoplay": true,
+      "controls": true,
 			"plugins": {
 				"none": {
 					"js": "http://solutions.brightcove.com/dbornstein/dev/bcdemos/bell/boltThumbs.js",
@@ -137,6 +140,7 @@
 			"defaultVideo": "4598812576001",
 			"autoplay": true,
 			"muted": true,
+      "controls": true,
 			"plugins": {
 				"manualRenditionSelection": {
 					"js": "./manualRenditionSelection.js",

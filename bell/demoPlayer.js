@@ -130,8 +130,10 @@ function createPlayer(vjsId, pid, div, inVideo) {
 		playerHTML += '\" data-player=\"' + config.dataPlayerId + 
 				  '\" data-embed=\"default\" class=\"video-js\"';
 
-		if (myCfg.controls)
+		if (myCfg.controls) {
       playerHTML += ' controls';
+    }
+
 
 		if (myCfg.autoplay)		  
 			playerHTML += ' autoplay';
