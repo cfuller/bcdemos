@@ -10,6 +10,10 @@
 @font-face{font-family:BellSlim-Medium;src:url(fonts/bell_slim_medium-webfont.eot);src:url(fonts/bell_slim_medium-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_medium-webfont.woff) format("woff"),url(fonts/bell_slim_medium-webfont.ttf) format("truetype"),url(fonts/bell_slim_medium-webfont.svg#bellslimmedium) format("svg");font-weight:400;font-style:normal}
 @font-face{font-family:BellSlim-SemiBold;src:url(fonts/bell_slim_semibold-webfont.eot);src:url(fonts/bell_slim_semibold-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/bell_slim_semibold-webfont.woff) format("woff"),url(fonts/bell_slim_semibold-webfont.ttf) format("truetype"),url(fonts/bell_slim_semibold-webfont.svg#bellslimsemibold) format("svg");font-weight:400;font-style:normal}
 
+html, body {
+  height: 100%;
+}
+
 .container {
   max-width: 1000px;
 }
@@ -21,6 +25,18 @@
   min-height: 800px;
   position: absolute;
   opacity: .5;
+}
+
+#bg-video video {
+  position: fixed !important;
+  top: 50% !important;;
+  left: 50% !important;;
+  z-index: 1 !important;;
+  transform: translate(-50%, -50%) !important;;
+  min-width: 100% !important;;
+  min-height: 100% !important;;
+  width: auto !important;;
+  height: auto !important;;
 }
 
 #bg-video .video-js {
