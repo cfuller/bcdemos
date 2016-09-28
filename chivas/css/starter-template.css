@@ -84,9 +84,6 @@ a, a:hover {
   z-index: 10 !important;
   transform: translate(-50%, -50%) !important;
   text-align: center;
-  color: #eee;
-  font-size: 24px;
-  line-height: 1.5em;
 }
 
 .video-content-overlay .content img {
@@ -95,15 +92,19 @@ a, a:hover {
 }
 
 .video-content-overlay .content h2 {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
   font-size: 24px;
+  color: #eee;
+  line-height: 1.5em;
 }
 
 .video-content-overlay .content p {
-  margin-bottom: 10px;
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: 300;
   font-family: Lato, sans-serif;
+  color: #eee;
+  line-height: 1.5em;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15)
 }
 
 .video-overlay {
