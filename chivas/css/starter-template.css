@@ -74,6 +74,16 @@ a, a:hover {
 
 .video-content-overlay .content {
   position: relative;
+  text-align: center;
+  color: #eee;
+  z-index: 10;
+  font-size: 24px;
+  line-height: 1.5em;
+  margin: auto auto auto auto;
+  margin-top: 100px;
+}
+
+/*position: relative;
   margin: auto;
   text-align: center;
   color: #eee;
@@ -81,8 +91,7 @@ a, a:hover {
   z-index: 10;
   margin-bottom: 10px;
   font-size: 24px;
-  line-height: 1.5em;
-}
+  line-height: 1.5em;*/
 
 .video-overlay {
   position: absolute;
