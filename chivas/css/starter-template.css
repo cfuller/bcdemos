@@ -70,6 +70,10 @@ a, a:hover {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .ls1 {
   line-height: 3em;
 }
@@ -82,4 +86,40 @@ a, a:hover {
 
 .portfolio-desc h3 a:hover {
   color: #fc4237;
+}
+
+#footer.dark, .dark #footer {
+  color: #CCC;
+  border-top-color: rgba(0,0,0,0.2);
+}
+
+#footer {
+  position: relative;
+  background: #ff3e3d url(../img/footer-2.jpg) top center repeat-x;
+  border-top: 5px solid rgba(0,0,0,0.2);
+}
+
+.dark #copyrights {
+  background-color: rgba(0,0,0,0.2);
+  color: rgba(255,255,255,0.25);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+#copyrights {
+  padding: 40px 0;
+  background-color: #DDD;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.dark .copyright-links a {
+  color: rgba(255,255,255,0.25);
+  border-bottom-color: rgba(255,255,255,0.25);
+}
+
+.copyright-links a {
+  display: inline-block;
+  margin: 0 3px;
+  color: #333;
+  border-bottom: 1px dotted #444;
 }
