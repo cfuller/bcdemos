@@ -12,16 +12,16 @@
 
   <title>Chivas TV</title>
 
-  <!-- Bootstrap core CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/starter-template.css" rel="stylesheet">
+  <link href="css/font-icons.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="http://solutions.brightcove.com/crutman/Chivas/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -110,7 +110,7 @@
 </div>
 <div class="container-fluid">
   <!-- cta panels -->
-  <div class="row">
+  <div class="row section portfolio-full">
     <div class="col-md-3">
       <img src="https://d4ytl3mufd852.cloudfront.net/chivasImages/1474384378-320.png" alt="" style="visibility: visible; opacity: 1; display: block;">
       <div class="portfolio-desc">
@@ -151,7 +151,7 @@
   </div>
   <!--//cta panels -->
 </div>
-<div class="container">
+<div class="container section">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="faq">
@@ -159,36 +159,29 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 center section">
+      <div class="heading-block center">
+        <h3>Suscríbete a nuestro <span>boletín</span></h3>
+      </div>
+      <div class="subscribe-widget">
+        <div class="widget-subscribe-form-result" id="subscribe-sendy-result"></div>
+        <form id="widget-subscribe-form2" onsubmit="return submitSendy();" method="post" class="nobottommargin" novalidate="novalidate">
+          <div class="input-group input-group-lg divcenter" style="max-width:600px;">
+            <span class="input-group-addon"><i class="icon-email2"></i></span>
+            <input type="email" id="sendy-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Ingresa tu correo electrónico" aria-required="true">
+            <span class="input-group-btn">
+    										<button class="btn btn-default" id="register-sendy" type="submit">Suscribirme</button>
+    									</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <div class="starter-template">
-  <section id="content" style="margin-bottom: 0px;">
-    <div class="content-wrap">
-      <div class="line"></div>
-
-
-      <div class="section-nobottommargin">
-        <div class="container clearfix">
-          <div class="heading-block-center">
-            <h3>Suscríbete a nuestro <span>boletín</span></h3>
-          </div>
-          <div class="subscribe-widget">
-            <div class="widget-subscribe-form-result" id="subscribe-sendy-result"></div>
-            <form id="widget-subscribe-form2" onsubmit="return submitSendy();" method="post" class="nobottommargin" novalidate="novalidate">
-              <div class="input-group input-group-lg divcenter" style="max-width:600px;">
-                <span class="input-group-addon"><i class="icon-email2"></i></span>
-                <input type="email" id="sendy-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Ingresa tu correo electrónico" aria-required="true">
-                <span class="input-group-btn">
-    										<button class="btn btn-default" id="register-sendy" type="submit">Suscribirme</button>
-    									</span>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- JS handler for newsletter signup -->
 
@@ -223,28 +216,31 @@
   <footer id="footer" class="dark">
     <div id="copyrights">
       <div class="container clearfix">
-        <div class="col_half">
-          Chivas  &reg; TV  2016, Derechos Reservados © 2016, Chivas de Corazón S.A. de C.V., Juan Gil Preciado 2450 N, Col. El Tigre, Zapopan, Jalisco, México, CP 45134.<br>
-          <div class="copyright-links"><a href="terms.php">Términos de Uso</a> / <a href="privacy.php">Aviso de Privacidad</a> / <a href="http://facturacion.chivastv.mx/">Facturación Electrónica</a></div>
-        </div>
-        <div class="col_half col_last tright">
-          <div class="fright clearfix">
-            <a href="https://www.facebook.com/somoschivastv" target="_blank" class="social-icon si-small si-borderless si-facebook">
-              <i class="icon-facebook"></i>
-              <i class="icon-facebook"></i>
-            </a>
-            <a href="https://twitter.com/somoschivastv" target="_blank" class="social-icon si-small si-borderless si-twitter">
-              <i class="icon-twitter"></i>
-              <i class="icon-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/somoschivastv" target="_blank" class="social-icon si-small si-borderless si-instagram">
-              <i class="icon-instagram"></i>
-              <i class="icon-instagram"></i>
-            </a>
+        <div class="row">
+          <div class="col-md-7">
+            Chivas  &reg; TV  2016, Derechos Reservados © 2016, Chivas de Corazón S.A. de C.V., Juan Gil Preciado 2450 N, Col. El Tigre, Zapopan, Jalisco, México, CP 45134.<br>
+            <div class="copyright-links"><a href="terms.php">Términos de Uso</a> / <a href="privacy.php">Aviso de Privacidad</a> / <a href="http://facturacion.chivastv.mx/">Facturación Electrónica</a></div>
           </div>
-          <div class="clear"></div>
-          <i class="icon-envelope2"></i> <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a2d1cdd2cdd0d6c7e2c1cacbd4c3d1d6d48cc1cdcf8ccfda">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><span class="middot">&middot;</span> <i class="icon-phone"></i> 01 800 244 8271
+          <div class="col-md-5 pull-right right">
+            <div class="fright clearfix">
+              <a href="https://www.facebook.com/somoschivastv" target="_blank" class="social-icon si-small si-borderless si-facebook">
+                <i class="icon-facebook"></i>
+                <i class="icon-facebook"></i>
+              </a>
+              <a href="https://twitter.com/somoschivastv" target="_blank" class="social-icon si-small si-borderless si-twitter">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/somoschivastv" target="_blank" class="social-icon si-small si-borderless si-instagram">
+                <i class="icon-instagram"></i>
+                <i class="icon-instagram"></i>
+              </a>
+            </div>
+            <div class="clear"></div>
+            <i class="icon-envelope2"></i> <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a2d1cdd2cdd0d6c7e2c1cacbd4c3d1d6d48cc1cdcf8ccfda">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><span class="middot">&middot;</span> <i class="icon-phone"></i> 01 800 244 8271
+          </div>
         </div>
+
       </div>
     </div>
   </footer>

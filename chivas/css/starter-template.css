@@ -1,10 +1,43 @@
+body {
+  line-height: 1.5;
+  color: #555;
+  font-family: 'Lato',sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 30px 0;
+  font-family: 'Raleway',sans-serif;
+}
+
+h1>span:not(.nocolor), h2>span:not(.nocolor), h3>span:not(.nocolor), h4>span:not(.nocolor), h5>span:not(.nocolor), h6>span:not(.nocolor) {
+  color: #fc4237;
+}
+
 a, a:hover {
   text-decoration: none;
 }
 
-.starter-template {
-  padding: 40px 15px;
-  text-align: left;
+.heading-block {
+  margin-bottom: 50px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.center .heading-block:after, .heading-block.center:after, .heading-block.title-center:after {
+  margin: 30px auto 0;
+}
+
+.heading-block:after {
+  content: '';
+  display: block;
+  margin-top: 30px;
+  width: 40px;
+  border-top: 2px solid #444;
 }
 
 .main-nav {
@@ -66,6 +99,10 @@ a, a:hover {
   margin: 0 auto;
 }
 
+.divcenter {
+  margin: auto;
+}
+
 .center {
   text-align: center;
 }
@@ -78,6 +115,20 @@ a, a:hover {
   line-height: 3em;
 }
 
+.portfolio-full .portfolio-desc {
+  padding: 15px;
+}
+
+.portfolio-full img {
+  width: 100%;
+}
+
+.portfolio-desc h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 19px;
+}
+
 .portfolio-desc h3 a {
   color: #222;
   font-family: 'Raleway',sans-serif;
@@ -86,6 +137,20 @@ a, a:hover {
 
 .portfolio-desc h3 a:hover {
   color: #fc4237;
+}
+
+.portfolio-desc span {
+  margin-top: 3px;
+  color: #888;
+}
+
+.heading-block h3 {
+  font-size: 26px;
+  margin-bottom: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
 }
 
 #footer.dark, .dark #footer {
