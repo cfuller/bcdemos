@@ -45,6 +45,10 @@ a, a:hover {
   margin-bottom: 5px;
 }
 
+.navbar-left img {
+  margin-left: 1em;
+}
+
 .featured-section {
   background: url(../img/pattern2.png) repeat;
   position: relative;
