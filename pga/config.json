@@ -1,0 +1,233 @@
+{
+	"players": {
+		"fuller": {
+			"accountId": "4365621380001",
+			"bcPlayerId": "59579bce-1612-4607-8e8d-adc5db73766d",
+			"defaultVideo": "4527128898001"
+		},
+
+    "big-bg": {
+      "comment": "Background player for home page",
+      "accountId": "4365621380001",
+      "bcPlayerId": "59579bce-1612-4607-8e8d-adc5db73766d",
+      "defaultVideo": "4527128898001",
+      "autoplay": true,
+      "muted": true,
+      "controls": false,
+      "loop": true
+    },
+		
+		"ad-std": {
+			"comment": "Std Player with IMA",
+			"accountId": "4165107200001",
+			"bcPlayerId": "SJ8voc23",
+			"defaultVideo": "4598862275001",
+			"autoplay": true,
+			"muted": true,
+			"plugins": {
+				"ima3": {
+					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
+					"css": "http://players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css",
+					"options": {
+            "debug": true,
+						"requestMode": "onload",
+				        "hardTimeouts": true,
+	    				"serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]"
+					}
+				}
+			}
+		},
+		"ad-playlist": {
+			"comment": "Playlist Player with IMA",
+			"accountId": "4165107200001",
+			"bcPlayerId": "ryXDWbTh",
+			"defaultVideo": "4598862275001",
+			"playlistId": "4598147255001",
+			"controls": true,
+			"plugins": {
+				"ima3": {
+					"js": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
+					"css": "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css",
+					"options": {
+					  "timeout": 4000,
+					  "hardTimeouts": true,
+					  "prerollTimeout": 4000,
+					  "postrollTimeout": 4000,
+					  "requestMode": "onload",
+					  "debug": true,
+					  "adTechOrder": [
+					    "html5",
+					    "flash"
+					  ],
+					  "vpaidMode": "ENABLED",
+					  "serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpost&cmsid=496&vid=short_onecue&correlator=",
+					  "serverUrl2": "https://pubads.g.doubleclick.net/gampad/ads?sz=1080x720&iu=/47279575/PND&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]",
+					  "serverUrl2": "http://pubads.g.doubleclick.net/gampad/ads?sz=1000x1&iu=/8484/si/video_bc&impl=s&gdfp_req=1&env=vp&output=vast&vid={mediainfo.id}&cust_params=ttid%3D{mediainfo.id}%26ad_keys%3D{mediainfo.ad_keys}%26plid%3D{player.id}%26frnch%3D{franchise}%26ad_tag%3D{adtag}%26category%3D{category}%26section%3D{section}&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&p1={p1}&p2={p2}&q1={q1}&q2={q2}"
+					}
+				},
+				"related": {
+					"js": "//solutions.brightcove.com/bclifford/demo/player/js/videojs-related.min.js",
+					"css": "//solutions.brightcove.com/bclifford/demo/player/css/videojs-related.css",
+					"options": {
+      					"source": "related",
+      					"token": "PvXQ5LwozBUo6w4_a_A2JGWS42E0JggkcgYvpXSolYFQd_rQBfOXzg..",
+      					"link": {
+				        	"field": "link.url"
+     					}
+					}
+				},
+				"manualRenditionSelection": {
+					"js": "./manualRenditionSelection.js",
+					"css": "./manualRenditionSelection.css",
+					"options": {}
+				}
+			}
+		},
+		"drm": {
+			"product": "perform",
+			"accountId": "4165107200001",
+			"bcPlayerId": "ryavj53h",
+			"defaultVideo": "4598862275001",
+			"controls": true,
+			"plugins": {
+				"manualRenditionSelection": {
+					"js": "./manualRenditionSelection.js",
+					"css": "./manualRenditionSelection.css",
+					"options": {}
+				},
+				"related": {
+					"js": "//solutions.brightcove.com/bclifford/demo/player/js/videojs-related.min.js",
+					"css": "//solutions.brightcove.com/bclifford/demo/player/css/videojs-related.css",
+					"options": {
+      					"source": "related",
+      					"token": "PvXQ5LwozBUo6w4_a_A2JGWS42E0JggkcgYvpXSolYFQd_rQBfOXzg..",
+      					"link": {
+				        	"field": "link.url"
+     					}
+					}
+				},
+        "loginForm": {
+          "js": "./loginForm.js",
+          "css": "./loginForm.css",
+          "options": {}
+        }
+			}
+		},
+		"iris": {
+			"comment": "IRIS Player from NAB Demo site",
+			"accountId": "1736779881001",
+			"bcPlayerId": "NJgWpz1Hqg",
+			"defaultVideo": "2813092874001",
+			"autoplay": true
+		},
+		"scrubber": {
+			"comment": "Scrubber Player from NAB Demo site. Needed since this uses Bolt.",
+			"accountId": "906043040001",
+			"bcPlayerId": "HyzKOdrN",
+			"defaultVideo": "5017521365001",
+			"autoplay": true,
+      "controls": true,
+			"plugins": {
+				"none": {
+					"js": "http://solutions.brightcove.com/dbornstein/dev/bcdemos/bell/boltThumbs.js",
+					"css": "https://rawgit.com/brightcove/videojs-thumbnails/master/videojs.thumbnails.css"
+				}
+			}
+		},
+		"bitrate-selector": {
+			"comment": "Std Player with Bitrate Selector",
+			"accountId": "4165107200001",
+			"bcPlayerId": "SJ8voc23",
+			"defaultVideo": "4598812576001",
+			"autoplay": true,
+			"muted": true,
+      "controls": true,
+			"plugins": {
+				"manualRenditionSelection": {
+					"js": "./manualRenditionSelection.js",
+					"css": "./manualRenditionSelection.css",
+					"options": {}
+				},
+				"skipButton": {
+					"js": "./skipButton.js",
+					"css": "./skipButton.css]",
+					"options": {
+ 						"forwards": 30,
+  						"back": 30
+  					}
+				}
+			}
+		}
+	},
+	"videos": {
+		"albert1": { 
+			"src": {
+	    		"type":"application/dash+xml", 
+	    		"src": "https://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/bccenc/4846977602001/2d47d146-5ac1-4557-a4ca-f3a54a8810f0/2s/manifest.mpd?fastly_token=NTgwMTY2NzBfYjQ0MDc0OWNiMWFlZDVjNDkwMjZiMDY3NTcwNTU5MjU4ZTBjZDQzYjA5NTMxOGZjODk4YzM3MjY2OTg5M2FiZA%3D%3D",
+	    		"keySystemOptions": [{
+	     			"name": "com.widevine.alpha",
+	      			 "options": { 
+	      			 	"licenseUrl": "https://manifest.prod.boltdns.net/license/v1/cenc/widevine/4846977602001/2d47d146-5ac1-4557-a4ca-f3a54a8810f0/5b0b8084-de73-4780-ace5-16e139f484a3?fastly_token=NTgwMTY2NzBfOGQzMGE4NjdiNTcyOGNlYzU1MDljNjQ1NjE5NTVmYjE1MTU3MGIzZWEyYWE1YjE4NzIwN2E3NmYwNDQyZjZhMA%3D%3D"
+	      			}
+	    		}]
+	    	},
+			"metadata": {
+	    		"name": "Albert's DRM Content",
+	    		"description": "Non VC DRM Content protected with 3rd party license servers"
+    		}
+
+    	},
+    	"drm1": { 
+			"src": {
+	    		"type":"application/dash+xml", 
+	    		"src": "https://dashamc-a.akamaihd.net/5049773604001/5049773604001_5124979148001_5124962401001.mpd?pubId=5049773604001&videoId=5124962401001",
+	    		"keySystemOptions": [{
+	     			"name": "com.widevine.alpha",
+	      			 "options": { 
+	      			 	"licenseUrl": "https://wvlic.brightcove.com/proxy/5124962401001"
+	      			}
+	    		}]
+	    	},
+			"metadata": {
+	    		"name": "Vox Verge",
+	    		"description": "Microsoft launches new products"
+    		},
+    		"images": {
+        		"poster": {
+        			"width": 1920,
+                	"height": 1080, 
+                    "src": "https://amchd2-a.akamaihd.net/pd/5049773604001/201609/5049773604001_5124980354001_5124962401001-vs.jpg?pubId=5049773604001&videoId=5124962401001"
+                },
+       			 "thumbnail": {
+       			 	"width": 320,
+                    "height": 180, 
+                    "src": "https://amchd2-a.akamaihd.net/pd/5049773604001/201609/5049773604001_5124982832001_5124962401001-th.jpg?pubId=5049773604001&videoId=5124962401001"
+                }
+            }
+    	}, 
+    	"clear1": {
+    		"src": [{ "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
+        			  "type": "application/x-mpegURL" },
+        			{ "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+        			  "type": "video/mp4"} ],
+        	"metadata": {
+	    		"name": "This is a test",
+	    		"description": "This is the description"
+    		},
+    		"images": {
+        		"poster": {
+        			"width": 1920,
+                	"height": 1080, 
+                    "src": "https://amchd2-a.akamaihd.net/pd/5049773604001/201609/5049773604001_5124980354001_5124962401001-vs.jpg?pubId=5049773604001&videoId=5124962401001"
+                },
+       			 "thumbnail": {
+       			 	"width": 320,
+                    "height": 180, 
+                    "src": "https://amchd2-a.akamaihd.net/pd/5049773604001/201609/5049773604001_5124982832001_5124962401001-th.jpg?pubId=5049773604001&videoId=5124962401001"
+                }
+            }
+    	}
+	}
+}
+
+
