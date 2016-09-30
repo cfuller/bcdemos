@@ -14,7 +14,13 @@
       "autoplay": true,
       "muted": true,
       "controls": false,
-      "loop": true
+      "loop": true,
+			"plugins": {
+        "noPoster": {
+          "js": "./js/noPoster.js",
+          "options": {}
+        }
+      }
     },
 		
 		"ad-std": {

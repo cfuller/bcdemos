@@ -38,7 +38,6 @@ function destroyPlayer( vjsId) {
 }
 
 function loadVideo( vjsId, video) {
-
 	if (! video) {
 		return
 	}
@@ -57,7 +56,7 @@ function loadVideo( vjsId, video) {
     	this.mediainfo = videoObject;
      	this.src(this.mediainfo.sources);
    
-		console.log('loading poster')
+		console.log('loading poster');
 	    if (typeof video.images.poster.src != 'undefined')  {
 	    	this.poster(video.images.poster.src)
 	    }
@@ -83,8 +82,8 @@ function createPlayer(vjsId, pid, div, inVideo) {
 
 	console.log("Looking for player config(pid):" + pid)
 	var myCfg = _cfg.players[pid];
-	myCfg['pid'] = pid
-	var product = myCfg['product'] || 'vc'
+	myCfg['pid'] = pid;
+	var product = myCfg['product'] || 'vc';
 	var playlistId = myCfg['playlistId'] || null;
 
 	// xxx - validate myCfg was loaded or throw an error
@@ -108,7 +107,7 @@ function createPlayer(vjsId, pid, div, inVideo) {
 	// Load the player script first
 	var playerScript = "http://players.brightcove.net/" + config.accountId + "/" + config.dataPlayerId + "_default/index.min.js";
 	
-	console.log('loading player: ' + playerScript)
+	console.log('loading player: ' + playerScript);
 
 	jQuery.getScript(playerScript, function(data, status, jqxhr) {
 
@@ -144,7 +143,7 @@ function createPlayer(vjsId, pid, div, inVideo) {
 
 		playerHTML += ' ></video></div></div>';
 
-
+console.log(vjsId)
 		console.log("PlayerInnerHTML: " + playerHTML);
 		document.getElementById(config.targetDiv).innerHTML = playerHTML;
 		var newDiv = document.getElementById(config.playerId);
@@ -196,7 +195,6 @@ function loadPlugins( vjsId, pid, config ) {
 
 	for (var pluginName in plugins) {
 		var plugin = plugins[pluginName]
-
 		if (plugin.css) {
 			$("<link/>", {
 			   rel: "stylesheet",
@@ -208,10 +206,11 @@ function loadPlugins( vjsId, pid, config ) {
 
 	pluginList = []
 	for (var pluginName in plugins) {
-	
 		var plugin = plugins[pluginName]
+    console.log(plugin)
 		if (plugin.js)
 			pluginList.push(plugin.js)
+
 
 		getScripts(pluginList, function () {
 			for (var pluginName in plugins) {
