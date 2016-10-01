@@ -207,7 +207,6 @@ function loadPlugins( vjsId, pid, config ) {
 	pluginList = []
 	for (var pluginName in plugins) {
 		var plugin = plugins[pluginName]
-    console.log(plugin)
 		if (plugin.js)
 			pluginList.push(plugin.js)
 

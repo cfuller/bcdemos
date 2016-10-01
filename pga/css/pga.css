@@ -51,8 +51,39 @@ body {
 
 .home #main {
   padding: 20px;
-  background: #fff;
   margin-top: 10em;
+}
+
+.hp-row {
+  margin-bottom: 10px;
+}
+
+.hp-panel {
+  position: relative;
+  height: 5em;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.hp-panel:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.hp-panel span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #e4e4e4;
+  padding: 2% 3%;
+  display: block;
+  z-index: 3;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
 }
 
 nav {

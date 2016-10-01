@@ -233,7 +233,34 @@
                 }
             }
     	}
-	}
+	},
+  "navigation": {
+    "1": {
+      "link": "loadPoc1()",
+      "text": "Playlist",
+      "img": "img/test-thumb.jpg"
+    },
+    "2": {
+      "link": "loadPoc2()",
+      "text": "Security",
+      "img": "img/test-thumb.jpg"
+    },
+    "3": {
+      "link": "loadPoc3()",
+      "text": "Manual Switching",
+      "img": "img/test-thumb.jpg"
+    },
+    "4": {
+      "link": "loadPoc4()",
+      "text": "Recommendations",
+      "img": "img/test-thumb.jpg"
+    },
+    "5": {
+      "link": "loadPoc5()",
+      "text": "Thumbnail Scrubber",
+      "img": "img/test-thumb.jpg"
+    }
+  }
 }
 
 

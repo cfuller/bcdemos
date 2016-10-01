@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/demoPlayer.js"></script>
+  <script src="js/nav.js"></script>
   <link rel="icon" href="img/favicon.ico">
  
   <script>
@@ -61,10 +62,12 @@
 
   function loadHome() {
     createPlayer('fs', 'big-bg', 'bg-video', null);
+    loadTopNav($('ul.navbar-nav'));
     $('.title').remove();
     $('.bg-gray').addClass('home');
-    var html = '<div class="home-page-content">Put some cool stuff here</div>';
+    var html = '<div class="home-page-content container"></div>';
     $('#main').append(html);
+    loadHomeNav($('.home-page-content'))
   }
 
   // Load the page configuration file and the startup dynamic pages
@@ -106,11 +109,6 @@
     </div>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="nav navbar-nav" >
-        <li><a href="#"  onclick="loadPoc1()" selected><span>Playlist</span></a></li>
-        <li><a href="#"  onclick="loadPoc2()"><span>Security</span></a></li>
-        <li><a href="#"  onclick="loadPoc3()"><span>Manual Switching</span></a></li>
-        <li><a href="#"  onclick="loadPoc4()"><span>Recommendations</span></a></li>
-        <li><a href="#"  onclick="loadPoc5()"><span>Thumbnail Scrubber</span></a></li>
       </ul>
     </div>
   </div>
