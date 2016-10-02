@@ -123,11 +123,13 @@ function createPlayer(vjsId, pid, div, inVideo) {
 				playerHTML +=  '\"  data-video-id=\"' + config.videoId
 			}
 		}
-
-		// playerHTML += ' autoplay '
+	
 
 		playerHTML += '\" data-player=\"' + config.dataPlayerId + 
 				  '\" data-embed=\"default\" class=\"video-js\"';
+
+		if (myCfg.noposter)		  
+			playerHTML += ' poster ';
 
 		if (myCfg.controls)
       playerHTML += ' controls';

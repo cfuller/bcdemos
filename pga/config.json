@@ -14,6 +14,7 @@
       "autoplay": true,
       "muted": true,
       "controls": false,
+      "noposter": true,
       "loop": true,
 			"plugins": {
         "noPoster": {
