@@ -60,15 +60,17 @@ body {
 
 .hp-panel {
   position: relative;
-  height: 5em;
-  background-color: rgba(0,0,0,0.4);
+  height: 20em;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  cursor: pointer;
+  opacity: .5;
+  background-size: cover;
 }
 
 .hp-panel:hover {
-  background-color: rgba(0,0,0,0.2);
+  opacity: 1;
 }
 
 .hp-panel span {
@@ -80,10 +82,10 @@ body {
   padding: 2% 3%;
   display: block;
   z-index: 3;
-  cursor: pointer;
   font-size: 24px;
   line-height: 40px;
   text-align: center;
+  background-color: rgba(0,0,0,0.4);
 }
 
 nav {

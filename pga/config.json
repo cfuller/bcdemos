@@ -239,27 +239,27 @@
     "1": {
       "link": "loadPoc1()",
       "text": "Playlist",
-      "img": "img/test-thumb.jpg"
+      "img": "img/teamphotonew-1268-getty.png"
     },
     "2": {
       "link": "loadPoc2()",
       "text": "Security",
-      "img": "img/test-thumb.jpg"
+      "img": "img/moore-1268-getty.png"
     },
     "3": {
       "link": "loadPoc3()",
       "text": "Manual Switching",
-      "img": "img/test-thumb.jpg"
+      "img": "img/mickelson-1268-getty.png"
     },
     "4": {
       "link": "loadPoc4()",
       "text": "Recommendations",
-      "img": "img/test-thumb.jpg"
+      "img": "img/reedmcilroy-1268-getty.png"
     },
     "5": {
       "link": "loadPoc5()",
       "text": "Thumbnail Scrubber",
-      "img": "img/test-thumb.jpg"
+      "img": "img/recapschamps-1268-getty.png"
     }
   }
 }
