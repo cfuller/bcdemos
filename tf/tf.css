@@ -1,0 +1,91 @@
+.video-js .hotspot {
+  opacity: 0;
+}
+
+.video-js .tooltip {
+  width: 540px;
+  height: 270px;
+  background-image: url(http://players.brightcove.net/4365621380001/thermo/img/bg-tooltip.png);
+  opacity: 0;
+}
+
+.video-js .tooltip-image {
+  width: 38%;
+  position: relative;
+}
+
+.video-js .tooltip-image img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 12%);
+}
+
+.video-js .tooltip-text {
+  width: 53%;
+  float: right;
+  margin-top: 9%;
+  margin-right: 28px;
+}
+
+.video-js .tooltip-text .tooltip-name {
+  color: #fec000;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.video-js .tooltip-text .tooltip-description {
+  line-height: 1.5em;
+}
+
+.video-js .tooltip-buttons {
+  clear: right;
+  margin-top: 150px;
+  width: 54%;
+  margin-left: 223px;
+}
+
+.video-js .tooltip-buttons a {
+  text-decoration: none;
+}
+
+.video-js .tooltip-buttons .btn-learn-more {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #fec000;
+  width: 40%;
+  text-align: center;
+  padding: 10px;
+  color: #fec000;
+  border-radius: 5px;
+}
+
+.video-js .tooltip-buttons .btn-learn-more:hover {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.video-js .tooltip-buttons .btn-quote {
+  border: 1px solid #fec000;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fec000;
+  margin-left: 1em;
+}
+
+.video-js .tooltip-buttons .btn-quote:hover {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.video-js .hotspot-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(http://players.brightcove.net/4365621380001/thermo/img/Thermo_target_grey.gif);
+}
+
+.video-js .hotspot-img:hover {
+  background-image: url(http://players.brightcove.net/4365621380001/thermo/img/Thermo_target_red.gif);
+}

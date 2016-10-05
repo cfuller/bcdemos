@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "name": "Thermo Scientific Continuous Emissions Systems",
+      "short_description": "consists of a wide range of gas analyzers and probes which provide unsurpassed sensitivity, accuracy and reliabilty.",
+      "long_description": "",
+      "product_url": "https://www.thermofisher.com/order/catalog/product/CEMS",
+      "quote_url": "https://www.thermofisher.com/us/en/home/technical-resources/request-a-quote.CEMS.html",
+      "image": "img/CEMS.png",
+      "hotspot_x": "308",
+      "hotspot_y": "115",
+      "rollover_anchor": "top_left"
+
+    },
+    {
+      "name": "Thermo Scientific™ Auto EXEC",
+      "short_description": "32-Run Expandable Gas and Liquid Flow Computer can measure natural gas and liquid flow rates simultaneously.",
+      "long_description": "",
+      "product_url": "https://www.thermofisher.com/order/catalog/product/10124435",
+      "quote_url": "https://www.thermofisher.com/us/en/home/technical-resources/request-a-quote.10124435.html",
+      "image": "img/AutoExec.png",
+      "hotspot_x": "1",
+      "hotspot_y": "213",
+      "rollover_anchor": "top_left"
+    },
+    {
+      "name": "Thermo Scientific SOLA II Online Sulfur Analyzer",
+      "short_description": "enables refiners to enhance the economic efficiency of desulfurization and protect valuable catalysts from poisoning.",
+      "long_description": "",
+      "product_url": "https://www.thermofisher.com/order/catalog/product/SOLAXANALYZ",
+      "quote_url": "https://www.thermofisher.com/us/en/home/technical-resources/request-a-quote.SOLAXANALYZ.html",
+      "image": "img/SOLA-II.png",
+      "hotspot_x": "855",
+      "hotspot_y": "231",
+      "rollover_anchor": "top_right"
+
+    },
+    {
+      "name": "Thermo Scientific KRILPRO Neutron Backscatter",
+      "short_description": "uses gamma transmission to offer the best monitoring scheme for both exact control and broad oversight of the delayed coking process.",
+      "long_description": "",
+      "product_url": "https://www.thermofisher.com/order/catalog/product/10135049",
+      "quote_url": "https://www.thermofisher.com/us/en/home/technical-resources/request-a-quote.10135049.html",
+      "image": "img/KrilPRO.png",
+      "hotspot_x": "500",
+      "hotspot_y": "625",
+      "rollover_anchor": "bottom_center"
+
+    }
+  ]
+}
